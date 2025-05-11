@@ -1,0 +1,27 @@
+wandb:
+    project: pico-llm_optionaltask3
+    name: null
+
+system:
+    device_id: cuda:0
+    to_compile: True
+
+data:
+    input_files: [] # list of files
+    tinystories_weight: 0.5
+    train_subset_size: 20000
+    test_split: 0.2 # 20% split? may need some change
+    batch_size: 16
+    block_size: 1024
+
+model:
+    type: lstm
+    embed_size: 1024
+    hidden_size: 1024
+
+algorithm:
+    lr: 1e-3
+    log_steps: 100
+    sample_interval: 30
+    max_steps_per_epoch: null
+    epochs: 15

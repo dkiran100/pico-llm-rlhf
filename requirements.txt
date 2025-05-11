@@ -1,0 +1,8 @@
+torch<3
+numpy<3
+hydra-core
+tqdm
+datasets
+tiktoken
+wandb
+matplotlib

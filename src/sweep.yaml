@@ -1,0 +1,21 @@
+program: main.py
+project: pico-llm-sweeps
+name: lstm_sweep
+method: grid
+metric:
+  goal: minimize
+  name: loss
+parameters:
+  model.embed_size:
+    values: [256, 512, 1024]
+  model.hidden_size:
+    values: [256, 512, 1024]
+  algorithm.lr:
+    values: [1e-4, 1e-3, 5e-3, 1e-2]
+
+command:
+  - ${interpreter}
+  - ${program}
+  - "--config-path=config"
+  - "--config-name=train_lstm"
+  - ${args_no_hyphens}
